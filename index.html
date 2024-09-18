@@ -1,33 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hidden Page</title>
-    <style>
-        /* Hide the content from view */
-        body { display: none; }
-    </style>
-</head>
-<body>
-    <!-- Key content hidden in a meta tag or hidden element -->
-    <meta id="key" content="your-secret-key">
-</body>
-</html>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Hidden Page</title>
+    <title>Redirecting...</title>
     <script>
-        function getKey() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('key'); // Retrieves the key from URL parameter
+        function redirectToKeyPage() {
+            // URL of the actual key page
+            const keyPageUrl = "https://your-github-username.github.io/key-page.html";
+            
+            // Redirect to the key page
+            window.location.href = keyPageUrl;
         }
-        window.onload = function() {
-            document.body.innerHTML = '<p id="key">' + getKey() + '</p>';
-        };
+        
+        // Call the redirect function when the page loads
+        window.onload = redirectToKeyPage;
     </script>
 </head>
 <body>
-    <!-- Content will be dynamically inserted by JavaScript -->
+    <!-- Optional: Display a message while redirecting -->
+    <p>Redirecting to the key page...</p>
 </body>
 </html>
