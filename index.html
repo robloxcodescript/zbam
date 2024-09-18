@@ -12,3 +12,22 @@
     <meta id="key" content="your-secret-key">
 </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hidden Page</title>
+    <script>
+        function getKey() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('key'); // Retrieves the key from URL parameter
+        }
+        window.onload = function() {
+            document.body.innerHTML = '<p id="key">' + getKey() + '</p>';
+        };
+    </script>
+</head>
+<body>
+    <!-- Content will be dynamically inserted by JavaScript -->
+</body>
+</html>
